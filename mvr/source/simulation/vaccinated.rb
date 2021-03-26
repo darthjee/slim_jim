@@ -1,5 +1,5 @@
 class Vaccinated
-  def initialize(population, probability)
+  def initialize(population, infection, mutation)
     @population = population
     @probability = probability
   end
@@ -9,18 +9,20 @@ class Vaccinated
   end
 
   def mutated
-    @mutated ||= Infected.new(infected, 
+    @mutated ||= Infected.new(infected, mutation).mutated
   end
 
   private
 
-  attr_reader :population, :probability
+  attr_reader :population, :infection, :mutation
 
   def calculate
     count = 0
     population.times do
-      count += 1 if Random.rand <= probability
+      count += 1 if Random.rand <= infection
     end
     count
   end
 end
+
+puts Infected
