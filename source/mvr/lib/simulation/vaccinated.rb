@@ -2,7 +2,8 @@ module Simulation
   class Vaccinated
     def initialize(population, infection, mutation)
       @population = population
-      @probability = probability
+      @infection  = infection
+      @mutation   = mutation
     end
 
     def infected

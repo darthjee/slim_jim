@@ -5,5 +5,3 @@ module Simulation
   autoload :Infected, 'simulation/infected'
   autoload :Vaccinated, 'simulation/vaccinated'
 end
-
-Simulation::Vaccinated
