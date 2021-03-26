@@ -7,20 +7,18 @@ module Simulation
       new(*args).simulate
     end
 
-    def initialize(population, infection, mutation)
-      @population = population
-      @infection  = infection
-      @mutation   = mutation
+    def initialize(attributes)
+      @attributes ||= attributes
     end
 
     def simulate
       {
-        vaccinated: Vaccinated.new(population, infection, mutation).mutated
+        vaccinated: Vaccinated.mutated(attributes)
       }
     end
 
     private
 
-    attr_reader :population, :infection, :mutation
+    attr_reader :attributes
   end
 end
