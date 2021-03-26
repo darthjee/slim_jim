@@ -19,7 +19,7 @@ module Simulation
     end
 
     def mutated
-      @mutated ||= Infected.new(population: infected, mutation: mutation).mutated
+      @mutated ||= Infected.mutated(population: infected, mutation: mutation)
     end
 
     private

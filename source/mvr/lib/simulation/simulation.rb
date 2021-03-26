@@ -13,7 +13,8 @@ module Simulation
 
     def simulate
       {
-        vaccinated: Vaccinated.mutated(attributes)
+        vaccinated: Vaccinated.mutated(attributes),
+        infected:   Infected.mutated(attributes)
       }
     end
 

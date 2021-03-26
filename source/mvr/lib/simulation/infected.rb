@@ -2,7 +2,13 @@
 
 module Simulation
   class Infected
-    def initialize(population:, mutation:)
+    private_class_method :new
+
+    def self.mutated(*args)
+      new(*args).mutated
+    end
+
+    def initialize(population:, mutation:, **_args)
       @population = population
       @mutation = mutation
     end
