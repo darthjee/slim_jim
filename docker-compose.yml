@@ -3,7 +3,7 @@ services:
   #################### Base  ####################
 
   base: &base
-    image: darthjee/mvr
+    image: darthjee/slim_jim
     volumes:
       - ./source:/home/app/app
 
@@ -13,8 +13,8 @@ services:
     command: echo done
   #################### CONTAINERS ####################
 
-  mvr:
+  slim_jim:
     <<: *base
-    container_name: mvr
+    container_name: slim_jim
     command: /bin/bash
     depends_on: [base_build]
