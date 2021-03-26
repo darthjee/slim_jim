@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   class Infected
     def initialize(population, probability)

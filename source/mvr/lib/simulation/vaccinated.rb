@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   class Vaccinated
     def initialize(population, infection, mutation)
