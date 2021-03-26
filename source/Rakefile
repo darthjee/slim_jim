@@ -1,3 +1,1 @@
-desc 'Simulate'
-task :simulate do
-end
+import 'mvr/tasks/main.rake'
