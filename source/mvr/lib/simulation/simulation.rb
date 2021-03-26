@@ -12,10 +12,10 @@ module Simulation
     end
 
     def simulate
-      {
+      SingleResult.new(
         vaccinated: Vaccinated.mutated(attributes),
         infected:   Infected.mutated(attributes)
-      }
+      )
     end
 
     private
