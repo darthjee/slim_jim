@@ -1,0 +1,20 @@
+version: '3'
+services:
+  #################### Base  ####################
+
+  base: &base
+    image: darthjee/mvr
+    volumes:
+      - ./source:/home/app/app
+
+  base_build:
+    <<: *base
+    build: .
+    command: echo done
+  #################### CONTAINERS ####################
+
+  mvr:
+    <<: *base
+    container_name: mvr
+    command: /bin/bash
+    depends_on: [base_build]
