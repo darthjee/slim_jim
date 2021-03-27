@@ -32,6 +32,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.11.0)
+    sinclair (1.6.7)
+      activesupport (~> 5.2.0)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
@@ -45,6 +47,7 @@ DEPENDENCIES
   danica (= 2.7.5)
   rake (= 13.0.1)
   rubocop (= 0.80.1)
+  sinclair (= 1.6.7)
 
 RUBY VERSION
    ruby 2.5.0p0
