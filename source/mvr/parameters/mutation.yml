@@ -1,0 +1,6 @@
+- output: 'file1.dat'
+  population: 1000000
+  activation: 0.01
+  mutation: 0.01
+  infection: 0.1
+  repetitions: 10

@@ -8,6 +8,7 @@ require 'danica'
 autoload :Collection, 'collection'
 
 module Simulation
+  autoload :Batch,          'simulation/batch'
   autoload :BulkSimulation, 'simulation/bulk_simulation'
   autoload :Infected,       'simulation/infected'
   autoload :Simulation,     'simulation/simulation'

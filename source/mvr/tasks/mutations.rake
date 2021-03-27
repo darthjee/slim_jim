@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
+require 'yaml'
+
 namespace :mvr do
   desc 'Simulate mutations'
   task :simulate do
-    puts Simulation::BulkSimulation.simulate(
-      population: 1_000_000,
-      activation: 0.01,
-      mutation: 0.01,
-      infection: 0.1,
-      repetitions: 10
-    )
+    yml = YAML.load_file('./mvr/parameters/mutation.yml')
+    yml.each do |params|
+      Simulation::Batch.run(params)
+    end
   end
 end
