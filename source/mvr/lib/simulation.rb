@@ -5,6 +5,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'danica'
 
+autoload :Collection, 'collection'
+
 module Simulation
   autoload :BulkSimulation, 'simulation/bulk_simulation'
   autoload :Infected,       'simulation/infected'
