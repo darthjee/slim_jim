@@ -13,14 +13,18 @@ module Simulation
     end
 
     def result
-      repetitions.times.map do
-        Simulation.simulate(attributes)
-      end
+      @result ||= Result.new(results)
     end
 
     private
 
     attr_reader :repetitions, :attributes
+
+    def results
+      repetitions.times.map do
+        Simulation.simulate(attributes)
+      end
+    end
   end
 end
 

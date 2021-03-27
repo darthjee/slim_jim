@@ -11,12 +11,12 @@ module Simulation
 
     attr_reader :vaccinated, :infected
 
-    def to_s
+    def to_h
       {
         vaccinated: vaccinated,
         infected: infected,
         ratio: ratio
-      }.to_s
+      }
     end
   end
 end
