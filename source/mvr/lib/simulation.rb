@@ -9,6 +9,7 @@ autoload :Collection, 'collection'
 
 module Simulation
   autoload :Batch,          'simulation/batch'
+  autoload :BatchOptions,   'simulation/batch_options'
   autoload :BulkSimulation, 'simulation/bulk_simulation'
   autoload :Infected,       'simulation/infected'
   autoload :Simulation,     'simulation/simulation'

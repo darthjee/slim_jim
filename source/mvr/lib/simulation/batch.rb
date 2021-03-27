@@ -6,11 +6,16 @@ module Simulation
       new(*args).run
     end
 
-    def initialize(*args)
-      puts args
+    def initialize(options_hash)
+      @options = BatchOptions.new(options_hash)
     end
 
     def run
+      puts options
     end
+
+    private
+
+    attr_reader :options
   end
 end
