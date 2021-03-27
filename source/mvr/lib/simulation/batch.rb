@@ -11,11 +11,15 @@ module Simulation
     end
 
     def run
-      puts options
+      for_all(:infection) do |infection|
+        puts infection
+      end
     end
 
     private
 
     attr_reader :options
+
+    delegate :for_all, to: :options
   end
 end
