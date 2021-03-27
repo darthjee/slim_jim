@@ -11,6 +11,7 @@ module Simulation
     def to_h
       {
         infected: infected,
+        infected_deviance: infected_deviance,
         vaccinated: vaccinated
       }
     end
@@ -25,6 +26,10 @@ module Simulation
 
     def vaccinated
       @vaccinated ||= results.map(&:vaccinated).average
+    end
+
+    def infected_deviance
+      @infected_deviance
     end
   end
 end
