@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Simulation
   class BulkSimulation
-
     private_class_method :new
 
     def self.simulate(*args)
@@ -27,4 +28,3 @@ module Simulation
     end
   end
 end
-
