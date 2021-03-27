@@ -8,7 +8,7 @@ module Simulation
       new(*args).mutated
     end
 
-    def initialize(population:, mutation:, **_args)
+    def initialize(population, mutation:, **_args)
       @population = population
       @mutation = mutation
     end
