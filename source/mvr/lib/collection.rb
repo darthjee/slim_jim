@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Collection
   attr_reader :values
 
@@ -19,7 +21,7 @@ class Collection
 
   def squared_deviances
     values.map do |value|
-      (value - average) ** 2
+      (value - average)**2
     end
   end
 end

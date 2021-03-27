@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Simulation
   class SingleResult
     def initialize(vaccinated:, infected:)
       @vaccinated = vaccinated
       @infected   = infected
     end
-   
+
     def ratio
       @ratio ||= vaccinated.to_f / infected
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   class Result
     def initialize(results)
@@ -16,7 +18,7 @@ module Simulation
         vaccinated_deviance: vaccinated_deviance
       }
     end
-  
+
     private
 
     attr_reader :results
