@@ -18,6 +18,8 @@ module Simulation
         vaccinated_deviance: vaccinated_deviance,
         ratio: ratio,
         ratio_deviance: ratio_deviance,
+        log_ratio: log_ratio,
+        log_ratio_deviance: log_ratio_deviance,
       }
     end
 
@@ -38,6 +40,10 @@ module Simulation
       @ratio ||= ratio_collection.average
     end
 
+    def log_ratio
+      @log_ratio ||= log_ratio_collection.average
+    end
+
     def infected_deviance
       infected_collection.deviance
     end
@@ -50,6 +56,10 @@ module Simulation
       ratio_collection.deviance
     end
 
+    def log_ratio_deviance
+      log_ratio_collection.deviance
+    end
+
     def infected_collection
       @infected_collection ||= Collection.new(results.map(&:infected))
     end
@@ -60,6 +70,10 @@ module Simulation
 
     def ratio_collection
       @ratio_collection ||= Collection.new(results.map(&:ratio))
+    end
+
+    def log_ratio_collection
+      @log_ratio_collection ||= Collection.new(results.map(&:ratio))
     end
   end
 end
