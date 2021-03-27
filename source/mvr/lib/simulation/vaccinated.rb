@@ -2,7 +2,13 @@
 
 module Simulation
   class Vaccinated
-    def initialize(population, infection, mutation)
+    private_class_method :new
+
+    def self.mutated(*args)
+      new(*args).mutated
+    end
+
+    def initialize(population:, infection:, mutation:)
       @population = population
       @infection  = infection
       @mutation   = mutation
@@ -13,7 +19,7 @@ module Simulation
     end
 
     def mutated
-      @mutated ||= Infected.new(infected, mutation).mutated
+      @mutated ||= Infected.mutated(population: infected, mutation: mutation)
     end
 
     private

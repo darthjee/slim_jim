@@ -2,9 +2,15 @@
 
 module Simulation
   class Infected
-    def initialize(population, probability)
+    private_class_method :new
+
+    def self.mutated(*args)
+      new(*args).mutated
+    end
+
+    def initialize(population:, mutation:, **_args)
       @population = population
-      @probability = probability
+      @mutation = mutation
     end
 
     def mutated
@@ -13,12 +19,12 @@ module Simulation
 
     private
 
-    attr_reader :population, :probability
+    attr_reader :population, :mutation
 
     def calculate
       count = 0
       population.times do
-        count += 1 if Random.rand <= probability
+        count += 1 if Random.rand <= mutation
       end
       count
     end
