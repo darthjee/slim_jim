@@ -4,8 +4,9 @@ lib = File.expand_path(__dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 module Simulation
-  autoload :Infected,     'simulation/infected'
-  autoload :Vaccinated,   'simulation/vaccinated'
-  autoload :Simulation,   'simulation/simulation'
-  autoload :SingleResult, 'simulation/single_result'
+  autoload :Infected,       'simulation/infected'
+  autoload :Vaccinated,     'simulation/vaccinated'
+  autoload :Simulation,     'simulation/simulation'
+  autoload :SingleResult,   'simulation/single_result'
+  autoload :BulkSimulation, 'simulation/bulk_simulation'
 end
