@@ -15,7 +15,9 @@ module Simulation
         infected: infected,
         infected_deviance: infected_deviance,
         vaccinated: vaccinated,
-        vaccinated_deviance: vaccinated_deviance
+        vaccinated_deviance: vaccinated_deviance,
+        ratio: ratio,
+        ratio_deviance: ratio_deviance,
       }
     end
 
@@ -32,6 +34,10 @@ module Simulation
       @vaccinated ||= vaccinated_collection.average
     end
 
+    def ratio
+      @ratio ||= ratio_collection.average
+    end
+
     def infected_deviance
       infected_collection.deviance
     end
@@ -40,12 +46,20 @@ module Simulation
       vaccinated_collection.deviance
     end
 
+    def ratio_deviance
+      ratio_collection.deviance
+    end
+
     def infected_collection
       @infected_collection ||= Collection.new(results.map(&:infected))
     end
 
     def vaccinated_collection
       @vaccinated_collection ||= Collection.new(results.map(&:vaccinated))
+    end
+
+    def ratio_collection
+      @ratio_collection ||= Collection.new(results.map(&:ratio))
     end
   end
 end
