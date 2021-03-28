@@ -12,7 +12,17 @@ module Simulation
 
     def run
       for_all(:infection) do |infection|
-        puts infection
+        for_all(:mutation) do |mutation|
+          for_all(:activation) do |activation|
+            puts BulkSimulation.simulate(
+              infection: infection,
+              mutation: mutation,
+              activation: activation,
+              population: population,
+              repetitions: repetitions
+            )
+          end
+        end
       end
     end
 
@@ -21,6 +31,7 @@ module Simulation
     attr_reader :options
 
     delegate :for_all, to: :iterator
+    delegate :population, :repetitions, to: :options
 
     def iterator
       @iterator ||= Iterator.new(options)
