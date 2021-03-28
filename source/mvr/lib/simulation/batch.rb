@@ -20,6 +20,10 @@ module Simulation
 
     attr_reader :options
 
-    delegate :for_all, to: :options
+    delegate :for_all, to: :iterator
+
+    def iterator
+      @iterator ||= Iterator.new(options)
+    end
   end
 end
