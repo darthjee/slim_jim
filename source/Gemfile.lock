@@ -13,6 +13,7 @@ GEM
       darthjee-core_ext (~> 1.7.3)
     darthjee-core_ext (1.7.4)
       activesupport (>= 5.2.x)
+    dr_light (0.0.3)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -43,8 +44,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (= 5.2.5)
   bundler (~> 1.16.1)
   danica (= 2.7.5)
+  dr_light (= 0.0.3)
   rake (= 13.0.1)
   rubocop (= 0.80.1)
   sinclair (= 1.6.7)

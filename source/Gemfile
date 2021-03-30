@@ -9,3 +9,5 @@ gem 'danica', '2.7.5'
 gem 'rake',    '13.0.1'
 gem 'rubocop', '0.80.1'
 gem 'sinclair', '1.6.7'
+gem 'activesupport', '5.2.5', require: false
+gem 'dr_light', '0.0.3'
