@@ -2,8 +2,9 @@
 
 module Simulation
   class Result
-    def initialize(results)
+    def initialize(results, **attributes)
       @results = results
+      @attributes = attributes
     end
 
     def to_s
@@ -11,7 +12,7 @@ module Simulation
     end
 
     def to_h
-      {
+      attributes.merge(
         infected: infected,
         infected_deviance: infected_deviance,
         vaccinated: vaccinated,
@@ -19,13 +20,13 @@ module Simulation
         ratio: ratio,
         ratio_deviance: ratio_deviance,
         log_ratio: log_ratio,
-        log_ratio_deviance: log_ratio_deviance,
-      }
+        log_ratio_deviance: log_ratio_deviance
+      )
     end
 
     private
 
-    attr_reader :results
+    attr_reader :results, :attributes
     delegate :size, to: :results
 
     def infected

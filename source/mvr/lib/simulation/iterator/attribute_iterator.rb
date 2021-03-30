@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   class Iterator
     class AttributeIterator
@@ -8,7 +10,7 @@ module Simulation
       end
 
       def iterate
-        if (value)
+        if value
           block.call(value)
         else
           iterate_over_steps
@@ -50,9 +52,10 @@ module Simulation
 
       attr_reader :key, :options, :block
 
-      delegate :min_infection,  :max_infection,  :infection_points,  :infection,  to: :options
-      delegate :min_mutation,   :max_mutation,   :mutation_points,   :mutation,   to: :options
-      delegate :min_activation, :max_activation, :activation_points, :activation, to: :options
+      delegate :min_infection, :max_infection, :infection_points,
+               :min_mutation,   :max_mutation,   :mutation_points,
+               :min_activation, :max_activation, :activation_points,
+               :infection, :mutation, :activation, to: :options
     end
   end
 end

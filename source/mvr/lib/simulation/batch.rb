@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   class Batch
     private_class_method :new
@@ -14,13 +16,7 @@ module Simulation
       for_all(:infection) do |infection|
         for_all(:mutation) do |mutation|
           for_all(:activation) do |activation|
-            puts BulkSimulation.simulate(
-              infection: infection,
-              mutation: mutation,
-              activation: activation,
-              population: population,
-              repetitions: repetitions
-            )
+            puts simulate(infection, mutation, activation)
           end
         end
       end
@@ -35,6 +31,16 @@ module Simulation
 
     def iterator
       @iterator ||= Iterator.new(options)
+    end
+
+    def simulate(infection, mutation, activation)
+      BulkSimulation.simulate(
+        infection: infection,
+        mutation: mutation,
+        activation: activation,
+        population: population,
+        repetitions: repetitions
+      )
     end
   end
 end

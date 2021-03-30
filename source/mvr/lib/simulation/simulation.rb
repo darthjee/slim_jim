@@ -23,7 +23,7 @@ module Simulation
 
     private
 
-    attr_reader :population, :infection,:attributes
+    attr_reader :population, :infection, :attributes
 
     def infected
       (population * infection).round

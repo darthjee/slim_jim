@@ -10,8 +10,8 @@ module Simulation
 
     def initialize(population, activation:, mutation:)
       @population = population
-      @activation  = activation
-      @mutation   = mutation
+      @activation = activation
+      @mutation = mutation
     end
 
     def infected

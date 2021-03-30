@@ -14,7 +14,11 @@ module Simulation
     end
 
     def result
-      @result ||= Result.new(results)
+      @result ||= Result.new(
+        results,
+        repetitions: repetitions,
+        **attributes
+      )
     end
 
     private
