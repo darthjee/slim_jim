@@ -1,10 +1,10 @@
-- output: 'file1.dat'
+- output: 'file1'
   population: 1000000
   activation: 0.01
   mutation: 0.01
   infection: 0.1
   repetitions: 10
-- output: 'file2.dat'
+- output: 'file2'
   population: 1000000
   activation: 0.01
   mutation: 0.01
@@ -12,7 +12,7 @@
   max_infection: 0.1
   infection_points: 10
   repetitions: 10
-- output: 'file3.dat'
+- output: 'file3'
   population: 1000000
   activation: 0.01
   mutation: 0.01

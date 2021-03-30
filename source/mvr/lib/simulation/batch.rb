@@ -13,12 +13,8 @@ module Simulation
     end
 
     def run
-      for_all(:infection) do |infection|
-        for_all(:mutation) do |mutation|
-          for_all(:activation) do |activation|
-            puts simulate(infection, mutation, activation)
-          end
-        end
+      data_file do |file|
+        simulate_all(file)
       end
     end
 
@@ -27,7 +23,17 @@ module Simulation
     attr_reader :options
 
     delegate :for_all, to: :iterator
-    delegate :population, :repetitions, to: :options
+    delegate :output, :population, :repetitions, to: :options
+
+    def simulate_all(file)
+      for_all(:infection) do |infection|
+        for_all(:mutation) do |mutation|
+          for_all(:activation) do |activation|
+            file.write simulate(infection, mutation, activation)
+          end
+        end
+      end
+    end
 
     def iterator
       @iterator ||= Iterator.new(options)
@@ -41,6 +47,14 @@ module Simulation
         population: population,
         repetitions: repetitions
       )
+    end
+
+    def data_file(&block)
+      @data_file ||= File.open(data_file_path, "w", &block)
+    end
+
+    def data_file_path
+      "mvr/data/#{output}.dat"
     end
   end
 end
