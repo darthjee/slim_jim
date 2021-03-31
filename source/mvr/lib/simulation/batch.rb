@@ -3,8 +3,11 @@
 module Simulation
   class Batch
     private_class_method :new
-    KEYS = %i[infected infected_deviance vaccinated vaccinated_deviance
-    ratio ratio_deviance log_ratio log_ratio_deviance]
+    KEYS = %i[
+      infection mutation activation population repetitions
+      infected infected_deviance vaccinated vaccinated_deviance
+      ratio ratio_deviance log_ratio log_ratio_deviance
+    ]
 
     def self.run(*args)
       new(*args).run

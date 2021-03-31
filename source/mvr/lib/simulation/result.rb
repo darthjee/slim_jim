@@ -2,9 +2,14 @@
 
 module Simulation
   class Result
+    include SafeAttributeAssignment
+
+    attr_accessor :infection, :mutation, :activation, :population, :repetitions
+
     def initialize(results, **attributes)
       @results = results
       @attributes = attributes
+      assign_attributes(attributes)
     end
 
     def to_s
@@ -56,6 +61,7 @@ module Simulation
       log_ratio_collection.deviance
     end
 
+    private
 
     attr_reader :results, :attributes
     delegate :size, to: :results
