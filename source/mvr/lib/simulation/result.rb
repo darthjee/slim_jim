@@ -24,11 +24,6 @@ module Simulation
       )
     end
 
-    private
-
-    attr_reader :results, :attributes
-    delegate :size, to: :results
-
     def infected
       @infected ||= infected_collection.average
     end
@@ -60,6 +55,10 @@ module Simulation
     def log_ratio_deviance
       log_ratio_collection.deviance
     end
+
+
+    attr_reader :results, :attributes
+    delegate :size, to: :results
 
     def infected_collection
       @infected_collection ||= Collection.new(results.map(&:infected))

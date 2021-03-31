@@ -3,6 +3,8 @@
 module Simulation
   class Batch
     private_class_method :new
+    KEYS = %i[infected infected_deviance vaccinated vaccinated_deviance
+    ratio ratio_deviance log_ratio log_ratio_deviance]
 
     def self.run(*args)
       new(*args).run
@@ -13,9 +15,8 @@ module Simulation
     end
 
     def run
-      data_file do |file|
-        simulate_all(file)
-      end
+      simulate_all
+      data_file.close
     end
 
     private
@@ -25,11 +26,11 @@ module Simulation
     delegate :for_all, to: :iterator
     delegate :output, :population, :repetitions, to: :options
 
-    def simulate_all(file)
+    def simulate_all
       for_all(:infection) do |infection|
         for_all(:mutation) do |mutation|
           for_all(:activation) do |activation|
-            file.write simulate(infection, mutation, activation)
+            data_file.write simulate(infection, mutation, activation)
           end
         end
       end
@@ -49,8 +50,8 @@ module Simulation
       )
     end
 
-    def data_file(&block)
-      @data_file ||= File.open(data_file_path, "w", &block)
+    def data_file
+      @data_file ||= DatFile.new(data_file_path, KEYS)
     end
 
     def data_file_path
