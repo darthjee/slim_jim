@@ -33,6 +33,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.11.0)
+    safe_attribute_assignment (0.0.3)
+      activesupport
     sinclair (1.6.7)
       activesupport (~> 5.2.0)
     thread_safe (0.3.6)
@@ -50,6 +52,7 @@ DEPENDENCIES
   dr_light (= 0.0.3)
   rake (= 13.0.1)
   rubocop (= 0.80.1)
+  safe_attribute_assignment (= 0.0.3)
   sinclair (= 1.6.7)
 
 RUBY VERSION
