@@ -3,3 +3,4 @@
 require_relative '../lib/simulation'
 
 import 'mvr/tasks/simulate.rake'
+import 'mvr/tasks/generate_scripts.rake'
