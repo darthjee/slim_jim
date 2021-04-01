@@ -8,6 +8,7 @@ require 'safe_attribute_assignment'
 
 autoload :Collection, 'collection'
 autoload :DatFile,    'dat_file'
+autoload :Utils,      'utils'
 
 module Simulation
   autoload :Batch,          'simulation/batch'
