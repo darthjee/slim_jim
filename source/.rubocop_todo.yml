@@ -7,15 +7,3 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 8
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'mvr/lib/collection.rb'
-    - 'mvr/lib/simulation.rb'
-    - 'mvr/lib/simulation/bulk_simulation.rb'
-    - 'mvr/lib/simulation/infected.rb'
-    - 'mvr/lib/simulation/result.rb'
-    - 'mvr/lib/simulation/simulation.rb'
-    - 'mvr/lib/simulation/single_result.rb'
-    - 'mvr/lib/simulation/vaccinated.rb'

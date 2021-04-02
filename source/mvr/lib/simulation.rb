@@ -4,12 +4,17 @@ lib = File.expand_path(__dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'danica'
+require 'safe_attribute_assignment'
 
 autoload :Collection, 'collection'
+autoload :DatFile,    'dat_file'
 
 module Simulation
+  autoload :Batch,          'simulation/batch'
+  autoload :BatchOptions,   'simulation/batch_options'
   autoload :BulkSimulation, 'simulation/bulk_simulation'
   autoload :Infected,       'simulation/infected'
+  autoload :Iterator,       'simulation/iterator'
   autoload :Simulation,     'simulation/simulation'
   autoload :SingleResult,   'simulation/single_result'
   autoload :Result,         'simulation/result'

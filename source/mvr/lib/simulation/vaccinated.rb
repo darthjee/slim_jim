@@ -8,10 +8,10 @@ module Simulation
       new(*args).mutated
     end
 
-    def initialize(population:, infection:, mutation:)
+    def initialize(population, activation:, mutation:)
       @population = population
-      @infection  = infection
-      @mutation   = mutation
+      @activation = activation
+      @mutation = mutation
     end
 
     def infected
@@ -19,17 +19,17 @@ module Simulation
     end
 
     def mutated
-      @mutated ||= Infected.mutated(population: infected, mutation: mutation)
+      @mutated ||= Infected.mutated(infected, mutation: mutation)
     end
 
     private
 
-    attr_reader :population, :infection, :mutation
+    attr_reader :population, :activation, :mutation
 
     def calculate
       count = 0
       population.times do
-        count += 1 if Random.rand <= infection
+        count += 1 if Random.rand <= activation
       end
       count
     end
