@@ -1,4 +1,4 @@
-FROM darthjee/ruby_250:0.6.1 as base
+FROM darthjee/ruby_plot:0.6.1 as base
 FROM darthjee/scripts:0.1.8 as scripts
 
 ######################################
@@ -19,7 +19,3 @@ FROM base
 COPY --chown=app:app --from=builder /home/app/bundle/ /usr/local/bundle/
 ADD source/Gemfile* /home/app/app/
 RUN bundle install
-
-User root
-RUN apt-get update && apt-get install -y gnuplot texlive-math-extra
-USER app
