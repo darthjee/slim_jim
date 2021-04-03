@@ -1,10 +1,12 @@
 - output: 'file1'
+  template: 'mutation'
   population: 1000000
   activation: 0.01
   mutation: 0.01
   infection: 0.1
   repetitions: 10
 - output: 'file2'
+  template: 'mutation'
   population: 1000000
   activation: 0.01
   mutation: 0.01
@@ -13,6 +15,7 @@
   infection_points: 10
   repetitions: 10
 - output: 'file3'
+  template: 'mutation'
   population: 1000000
   activation: 0.01
   mutation: 0.01

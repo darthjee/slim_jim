@@ -10,4 +10,5 @@ module Simulation
   autoload :SingleResult,   'simulation/single_result'
   autoload :Result,         'simulation/result'
   autoload :Vaccinated,     'simulation/vaccinated'
+  autoload :Gnuplot,        'simulation/gnuplot'
 end

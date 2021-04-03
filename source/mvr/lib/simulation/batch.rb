@@ -3,6 +3,7 @@
 module Simulation
   class Batch
     private_class_method :new
+
     KEYS = %i[
       infection mutation activation population repetitions
       infected infected_deviance vaccinated vaccinated_deviance
