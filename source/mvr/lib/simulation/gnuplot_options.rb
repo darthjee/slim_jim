@@ -7,7 +7,8 @@ module Simulation
     with_options :output, :template
     with_options(
       xlabel: 'X',
-      ylabel: 'Y'
+      ylabel: 'Y',
+      title: false
     )
     skip_validation
   end

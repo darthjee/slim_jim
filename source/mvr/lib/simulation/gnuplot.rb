@@ -19,7 +19,7 @@ module Simulation
     private
 
     attr_reader :options
-    delegate :output, :xlabel, :ylabel, to: :options
+    delegate :output, :xlabel, :ylabel, :title, to: :options
 
     def template
       @template ||= Utils::Template.new(
@@ -33,7 +33,8 @@ module Simulation
       {
         output: plot_output,
         xlabel: xlabel,
-        ylabel: ylabel
+        ylabel: ylabel,
+        title: title
       }
     end
 

@@ -4,7 +4,11 @@ reset
 set ylabel "<%= @ylabel %>"
 set xlabel "<%= @xlabel %>"
 #set nokey
-#set notitle
+<% if @title %>
+  set title "<%= @title %>
+<% else %>
+  set notitle
+<% end %>
 #set size 0.6,0.6
 set term png size 1024 512
 set out "<%= @output %>"
