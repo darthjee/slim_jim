@@ -7,6 +7,7 @@
     repetitions: 10
   plot:
     template: 'mutation'
+    output: 'file1'
 - data_file: 'file2'
   data: 
     population: 1000000
@@ -18,6 +19,7 @@
     repetitions: 10
   plot:
     template: 'mutation'
+    output: 'file2'
 - data_file: 'file3'
   data: 
     population: 1000000
@@ -28,3 +30,4 @@
     repetitions: 10
   plot:
     template: 'mutation'
+    output: 'file3'
