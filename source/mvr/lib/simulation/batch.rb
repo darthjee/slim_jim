@@ -22,7 +22,6 @@ module Simulation
 
     def run
       simulate_all
-      file.close
     end
 
     private
