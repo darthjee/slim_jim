@@ -13,7 +13,4 @@ set out "<%= @output %>"
 #  < define(f) %>
 #< end %>
 
-#plot < @plots.each do |plot| %> \
-#       < plot_line(plot) %>, \
-#     < end %>
-plot x
+plot "<%= @data_file %>" u <%= columns %>

@@ -19,7 +19,7 @@ module Simulation
     private
 
     attr_reader :options
-    delegate :output, :xlabel, :ylabel, :title, to: :options
+    delegate :output, to: :options
 
     def template
       @template ||= Utils::Template.new(
@@ -31,12 +31,9 @@ module Simulation
     end
 
     def variables
-      {
-        output: plot_output,
-        xlabel: xlabel,
-        ylabel: ylabel,
-        title: title
-      }
+      options.variables.merge(
+        output: plot_output
+      )
     end
 
     def plot_output
