@@ -52,10 +52,11 @@ module Simulation
 
       attr_reader :key, :options, :block
 
-      delegate :min_infection, :max_infection, :infection_points,
+      delegate :min_population, :max_population, :population_points,
+               :min_infection, :max_infection, :infection_points,
                :min_mutation,   :max_mutation,   :mutation_points,
                :min_activation, :max_activation, :activation_points,
-               :infection, :mutation, :activation, to: :options
+               :population, :infection, :mutation, :activation, to: :options
     end
   end
 end

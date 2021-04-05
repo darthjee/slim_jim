@@ -1,14 +1,16 @@
 - data_file: 'file1'
   data: 
-    population: 1000000
+    min_population: 1000000
+    max_population: 180000000
+    population_points: 50
     activation: 0.01
     mutation: 0.01
-    min_infection: 0.01
-    max_infection: 1
-    infection_points: 50
+    infection: 0.01
     repetitions: 10
   plot:
     template: 'mutation'
     output: 'file1'
-    xlabel: 'Infected population'
+    xlabel: 'Population Size'
     ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
+    x_column: 4
+    y_column: 12

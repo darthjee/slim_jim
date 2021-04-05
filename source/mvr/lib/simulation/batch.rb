@@ -29,13 +29,15 @@ module Simulation
     attr_reader :options
 
     delegate :for_all, to: :iterator
-    delegate :data_file, :population, :repetitions, to: :options
+    delegate :data_file, :repetitions, to: :options
 
     def simulate_all
-      for_all(:infection) do |infection|
-        for_all(:mutation) do |mutation|
-          for_all(:activation) do |activation|
-            file.write simulate(infection, mutation, activation)
+      for_all(:population) do |population|
+        for_all(:infection) do |infection|
+          for_all(:mutation) do |mutation|
+            for_all(:activation) do |activation|
+              file.write simulate(population, infection, mutation, activation)
+            end
           end
         end
       end
@@ -45,7 +47,7 @@ module Simulation
       @iterator ||= Iterator.new(options)
     end
 
-    def simulate(infection, mutation, activation)
+    def simulate(population, infection, mutation, activation)
       BulkSimulation.simulate(
         infection: infection,
         mutation: mutation,
