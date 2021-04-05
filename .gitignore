@@ -1,3 +1,4 @@
 **/*.swp
 source/*/data/*.dat
 source/*/gnuplot/*.gnu
+source/*/plots/*.png
