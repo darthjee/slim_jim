@@ -7,7 +7,7 @@ module Simulation
     KEYS = %i[
       infection mutation activation population repetitions
       infected infected_deviance vaccinated vaccinated_deviance
-      ratio ratio_deviance log_ratio log_ratio_deviance
+      ratio ratio_deviance log_ratio
     ]
 
     def self.run(options_hash = {})

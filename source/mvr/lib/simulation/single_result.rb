@@ -11,10 +11,6 @@ module Simulation
       @ratio ||= vaccinated.to_f / infected
     end
 
-    def log_ratio
-      @log_ratio ||= Math.log(ratio, 10)
-    end
-
     attr_reader :vaccinated, :infected
 
     def to_h

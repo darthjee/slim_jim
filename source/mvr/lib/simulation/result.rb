@@ -24,8 +24,7 @@ module Simulation
         vaccinated_deviance: vaccinated_deviance,
         ratio: ratio,
         ratio_deviance: ratio_deviance,
-        log_ratio: log_ratio,
-        log_ratio_deviance: log_ratio_deviance
+        log_ratio: log_ratio
       )
     end
 
@@ -42,7 +41,7 @@ module Simulation
     end
 
     def log_ratio
-      @log_ratio ||= log_ratio_collection.average
+      @log_ratio ||= Math.log(ratio, 10)
     end
 
     def infected_deviance
@@ -55,10 +54,6 @@ module Simulation
 
     def ratio_deviance
       ratio_collection.deviance
-    end
-
-    def log_ratio_deviance
-      log_ratio_collection.deviance
     end
 
     private
@@ -76,10 +71,6 @@ module Simulation
 
     def ratio_collection
       @ratio_collection ||= Collection.new(results.map(&:ratio))
-    end
-
-    def log_ratio_collection
-      @log_ratio_collection ||= Collection.new(results.map(&:log_ratio))
     end
   end
 end
