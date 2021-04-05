@@ -11,5 +11,6 @@ module Simulation
   autoload :Result,         'simulation/result'
   autoload :Vaccinated,     'simulation/vaccinated'
   autoload :Gnuplot,        'simulation/gnuplot'
+  autoload :GnuplotHelper,  'simulation/gnuplot_helper'
   autoload :GnuplotOptions, 'simulation/gnuplot_options'
 end

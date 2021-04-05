@@ -25,7 +25,8 @@ module Simulation
       @template ||= Utils::Template.new(
         "mvr/templates/#{options.template}.gnu.erb",
         "mvr/gnuplot/#{output}.gnu",
-        variables
+        variables,
+        [GnuplotHelper]
       )
     end
 
