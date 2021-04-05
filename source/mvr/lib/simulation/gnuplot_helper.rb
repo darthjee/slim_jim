@@ -7,5 +7,13 @@ module Simulation
     def columns
       "($#{@x_column}):($#{@y_column})"
     end
+
+    def set_xrange
+      @xrange ? "set xr [#{@xrange.join(':')}]" : ""
+    end
+
+    def set_yrange
+      @yrange ? "set yr [#{@yrange.join(':')}]" : ""
+    end
   end
 end

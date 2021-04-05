@@ -12,3 +12,4 @@
     output: 'file1'
     xlabel: 'Infected population'
     ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
+    xrange: [0,0.7]

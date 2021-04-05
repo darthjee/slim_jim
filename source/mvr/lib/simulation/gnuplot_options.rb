@@ -4,7 +4,7 @@ require 'sinclair'
 
 module Simulation
   class GnuplotOptions < Sinclair::Options
-    with_options :output, :template, :data_file
+    with_options :output, :template, :data_file, :xrange, :yrange
     with_options(
       x_column: 1,
       y_column: 12,
@@ -19,6 +19,8 @@ module Simulation
         data_file: data_file_path,
         xlabel: xlabel,
         ylabel: ylabel,
+        xrange: xrange,
+        yrange: yrange,
         x_column: x_column,
         y_column: y_column,
         title: title
