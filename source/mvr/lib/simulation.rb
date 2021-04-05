@@ -1,14 +1,5 @@
 # frozen_string_literal: true
 
-lib = File.expand_path(__dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-require 'danica'
-require 'safe_attribute_assignment'
-
-autoload :Collection, 'collection'
-autoload :DatFile,    'dat_file'
-
 module Simulation
   autoload :Batch,          'simulation/batch'
   autoload :BatchOptions,   'simulation/batch_options'
@@ -19,4 +10,7 @@ module Simulation
   autoload :SingleResult,   'simulation/single_result'
   autoload :Result,         'simulation/result'
   autoload :Vaccinated,     'simulation/vaccinated'
+  autoload :Gnuplot,        'simulation/gnuplot'
+  autoload :GnuplotHelper,  'simulation/gnuplot_helper'
+  autoload :GnuplotOptions, 'simulation/gnuplot_options'
 end

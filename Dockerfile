@@ -1,4 +1,4 @@
-FROM darthjee/ruby_250:0.6.1 as base
+FROM darthjee/ruby_plot:0.6.1 as base
 FROM darthjee/scripts:0.1.8 as scripts
 
 ######################################

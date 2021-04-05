@@ -1,0 +1,12 @@
+reset
+<%= set_xrange %>
+<%= set_yrange %>
+set ylabel "<%= @ylabel %>"
+set xlabel "<%= @xlabel %>"
+set nokey
+<%= set_title %>
+#set size 0.6,0.6
+set term png
+set out "<%= @output %>"
+
+plot "<%= @data_file %>" u <%= columns %>
