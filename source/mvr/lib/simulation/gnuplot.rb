@@ -17,13 +17,26 @@ module Simulation
     private
 
     attr_reader :options
-    delegate :output, to: :options
+    delegate :output, :xlabel, :ylabel, to: :options
 
     def template
       @template ||= Utils::Template.new(
         "mvr/templates/#{options.template}.gnu.erb",
-        "mvr/gnuplot/#{output}.gnu"
+        "mvr/gnuplot/#{output}.gnu",
+        variables
       )
+    end
+
+    def variables
+      {
+        output: plot_output,
+        xlabel: xlabel,
+        ylabel: ylabel
+      }
+    end
+
+    def plot_output
+      "mvr/plots/#{output}.png"
     end
   end
 end
