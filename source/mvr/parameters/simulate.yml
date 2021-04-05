@@ -3,31 +3,10 @@
     population: 1000000
     activation: 0.01
     mutation: 0.01
-    infection: 0.1
-    repetitions: 10
-  plot:
-    template: 'mutation'
-    output: 'file1'
-- data_file: 'file2'
-  data: 
-    population: 1000000
-    activation: 0.01
-    mutation: 0.01
     min_infection: 0.01
     max_infection: 0.1
     infection_points: 10
     repetitions: 10
   plot:
     template: 'mutation'
-    output: 'file2'
-- data_file: 'file3'
-  data: 
-    population: 1000000
-    activation: 0.01
-    mutation: 0.01
-    min_infection: 0.01
-    infection_points: 1
-    repetitions: 10
-  plot:
-    template: 'mutation'
-    output: 'file3'
+    output: 'file1'
