@@ -3,12 +3,11 @@ module Simulation
     private_class_method :new
 
     def self.generate(*args)
-      new(*args).run
+      new(*args).generate
     end
 
-    def initialize(output:, template:, **_)
-      @output = output
-      @template_file = template
+    def initialize(options_hash)
+      @options = GnuplotOptions.new(options_hash)
     end
 
     def generate
@@ -17,11 +16,12 @@ module Simulation
 
     private
 
-    attr_reader :template_file
+    attr_reader :options
+    delegate :output, to: :options
 
     def template
       @template ||= Utils::Template.new(
-        "mvr/templates/#{template_file}.gnu.erb",
+        "mvr/templates/#{options.template}.gnu.erb",
         "mvr/gnuplot/#{output}.gnu"
       )
     end
