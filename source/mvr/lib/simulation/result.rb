@@ -79,7 +79,7 @@ module Simulation
     end
 
     def log_ratio_collection
-      @log_ratio_collection ||= Collection.new(results.map(&:ratio))
+      @log_ratio_collection ||= Collection.new(results.map(&:log_ratio))
     end
   end
 end
