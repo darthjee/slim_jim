@@ -9,8 +9,4 @@ set nokey
 set term png
 set out "<%= @output %>"
 
-#< @functions.each do |f| %>
-#  < define(f) %>
-#< end %>
-
 plot "<%= @data_file %>" u <%= columns %>
