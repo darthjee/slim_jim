@@ -11,7 +11,7 @@ class DatFile
   def write(object)
     values = keys.map { |key| object.public_send(key) }
     file.write("#{values.join("\t")}\n").tap do
-      mode = "a"
+      @mode = "a"
       close
       @file = nil
     end
