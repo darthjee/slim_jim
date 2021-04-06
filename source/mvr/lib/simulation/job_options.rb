@@ -7,6 +7,10 @@ module Simulation
     skip_validation
     with_options :resimulate, :data_file, :data, :plots
 
+    def data?
+      data.present?
+    end
+
     def batch_options
       BatchOptions.new(
         data.merge(
