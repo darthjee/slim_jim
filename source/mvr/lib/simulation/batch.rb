@@ -23,6 +23,8 @@ module Simulation
     end
 
     def run
+      return unless process?
+
       puts "Simulating #{file_path}"
       simulate_all
     end
@@ -37,6 +39,11 @@ module Simulation
 
     delegate :for_all, to: :iterator
     delegate :data_file, :repetitions, to: :options
+
+    def process?
+      return true unless File.exists? file_path
+      options.resimulate
+    end
 
     def simulate_all
       for_all(:population) do |population|
