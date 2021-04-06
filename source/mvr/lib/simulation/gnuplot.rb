@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   class Gnuplot
     private_class_method :new
@@ -34,7 +36,7 @@ module Simulation
         output: plot_output
       )
     end
-    
+
     def script_path
       "mvr/gnuplot/#{output}.gnu"
     end

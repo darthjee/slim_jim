@@ -15,4 +15,3 @@ namespace :mvr do
     end
   end
 end
-

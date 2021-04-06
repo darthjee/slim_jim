@@ -9,8 +9,8 @@ import 'mvr/tasks/clean.rake'
 
 namespace :mvr do
   desc 'Run all task'
-  task all: %i(simulate generate_scripts plot)
+  task all: %i[simulate generate_scripts plot]
 
   desc 'rebuild scripts and replot'
-  task replot: %i(generate_scripts plot)
+  task replot: %i[generate_scripts plot]
 end

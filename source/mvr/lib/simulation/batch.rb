@@ -8,7 +8,7 @@ module Simulation
       infection mutation activation population repetitions
       infected infected_deviance vaccinated vaccinated_deviance
       ratio ratio_deviance log_ratio
-    ]
+    ].freeze
 
     def self.run(options)
       new(options).run

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Simulation
   module GnuplotHelper
     def set_title
@@ -9,11 +11,11 @@ module Simulation
     end
 
     def set_xrange
-      @xrange ? "set xr [#{@xrange.join(':')}]" : ""
+      @xrange ? "set xr [#{@xrange.join(':')}]" : ''
     end
 
     def set_yrange
-      @yrange ? "set yr [#{@yrange.join(':')}]" : ""
+      @yrange ? "set yr [#{@yrange.join(':')}]" : ''
     end
   end
 end

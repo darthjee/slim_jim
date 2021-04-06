@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Utils
   class Template
     attr_reader :input, :output, :variables, :helpers
@@ -25,7 +27,7 @@ module Utils
     end
 
     def build_builder
-      Utils::ErbBuilder.new(input_stream, variables).tap do |builder|
+      Utils::ErbBuilder.new(input_stream, variables).tap do |_builder|
         helpers.each do |helper|
           eval("class << builder\ninclude #{helper}\nend")
         end

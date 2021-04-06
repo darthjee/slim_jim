@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 class DatFile
   delegate :close, to: :file
 
   def initialize(path, keys)
     @path = path
     @keys = keys
-    @mode = "w"
+    @mode = 'w'
     write_header
   end
 
   def write(object)
     values = keys.map { |key| object.public_send(key) }
     file.write("#{values.join("\t")}\n").tap do
-      @mode = "a"
+      @mode = 'a'
       close
       @file = nil
     end
