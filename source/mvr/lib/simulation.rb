@@ -6,6 +6,7 @@ module Simulation
   autoload :BulkSimulation, 'simulation/bulk_simulation'
   autoload :Infected,       'simulation/infected'
   autoload :Iterator,       'simulation/iterator'
+  autoload :JobOptions,     'simulation/job_options'
   autoload :Simulation,     'simulation/simulation'
   autoload :SingleResult,   'simulation/single_result'
   autoload :Result,         'simulation/result'
@@ -13,4 +14,5 @@ module Simulation
   autoload :Gnuplot,        'simulation/gnuplot'
   autoload :GnuplotHelper,  'simulation/gnuplot_helper'
   autoload :GnuplotOptions, 'simulation/gnuplot_options'
+  autoload :Options,        'simulation/options'
 end

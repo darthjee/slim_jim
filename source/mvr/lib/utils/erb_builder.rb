@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'erb'
 
 class Utils::ErbBuilder
@@ -13,7 +15,7 @@ class Utils::ErbBuilder
         'end'
       ].join("\n")
       eval(code)
-      public_send("#{key}=", value);
+      public_send("#{key}=", value)
     end
   end
 

@@ -5,8 +5,7 @@ set ylabel "<%= @ylabel %>"
 set xlabel "<%= @xlabel %>"
 set nokey
 <%= set_title %>
-#set size 0.6,0.6
 set term png
 set out "<%= @output %>"
 
-plot "<%= @data_file %>" u <%= columns %>
+plot "<%= @data_file %>" u <%= columns %> w lines

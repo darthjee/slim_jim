@@ -1,19 +1,29 @@
+# frozen_string_literal: true
+
 module Simulation
   class Gnuplot
     private_class_method :new
 
-    def self.generate(options_hash = {})
-      new(options_hash.symbolize_keys).generate
+    def self.generate(options)
+      new(options).generate
     end
 
-    def initialize(options_hash)
-      @options = GnuplotOptions.new(
-        options_hash.merge(options_hash[:plot])
-      )
+    def self.clean(options)
+      new(options).clean
+    end
+
+    def initialize(options)
+      @options = options
     end
 
     def generate
+      puts "Generating #{script_path}"
       template.build
+    end
+
+    def clean
+      FileUtils.rm_rf script_path
+      FileUtils.rm_rf plot_output
     end
 
     private
@@ -24,7 +34,7 @@ module Simulation
     def template
       @template ||= Utils::Template.new(
         "mvr/templates/#{options.template}.gnu.erb",
-        "mvr/gnuplot/#{output}.gnu",
+        script_path,
         variables,
         [GnuplotHelper]
       )
@@ -34,6 +44,10 @@ module Simulation
       options.variables.merge(
         output: plot_output
       )
+    end
+
+    def script_path
+      "mvr/gnuplot/#{output}.gnu"
     end
 
     def plot_output

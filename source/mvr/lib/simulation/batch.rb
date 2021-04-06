@@ -7,21 +7,28 @@ module Simulation
     KEYS = %i[
       infection mutation activation population repetitions
       infected infected_deviance vaccinated vaccinated_deviance
-      ratio ratio_deviance log_ratio log_ratio_deviance
-    ]
+      ratio ratio_deviance log_ratio
+    ].freeze
 
-    def self.run(options_hash = {})
-      new(options_hash.symbolize_keys).run
+    def self.run(options)
+      new(options).run
     end
 
-    def initialize(options_hash)
-      @options = BatchOptions.new(
-        options_hash.merge(options_hash[:data])
-      )
+    def self.clean(options)
+      new(options).clean
+    end
+
+    def initialize(options)
+      @options = options
     end
 
     def run
+      puts "Simulating #{file_path}"
       simulate_all
+    end
+
+    def clean
+      FileUtils.rm_rf file_path
     end
 
     private
@@ -29,13 +36,15 @@ module Simulation
     attr_reader :options
 
     delegate :for_all, to: :iterator
-    delegate :data_file, :population, :repetitions, to: :options
+    delegate :data_file, :repetitions, to: :options
 
     def simulate_all
-      for_all(:infection) do |infection|
-        for_all(:mutation) do |mutation|
-          for_all(:activation) do |activation|
-            file.write simulate(infection, mutation, activation)
+      for_all(:population) do |population|
+        for_all(:infection) do |infection|
+          for_all(:mutation) do |mutation|
+            for_all(:activation) do |activation|
+              file.write simulate(population, infection, mutation, activation)
+            end
           end
         end
       end
@@ -45,7 +54,7 @@ module Simulation
       @iterator ||= Iterator.new(options)
     end
 
-    def simulate(infection, mutation, activation)
+    def simulate(population, infection, mutation, activation)
       BulkSimulation.simulate(
         infection: infection,
         mutation: mutation,

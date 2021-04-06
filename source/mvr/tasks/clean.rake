@@ -3,13 +3,16 @@
 require 'yaml'
 
 namespace :mvr do
-  desc 'generate gnuplot scripts'
-  task :generate_scripts do
+  desc 'Clean files'
+  task :clean do
     yml = YAML.load_file('./mvr/parameters/simulate.yml')
     options = Simulation::Options.new(yml)
 
     options.jobs_options.each do |job_options|
-      Simulation::Gnuplot.generate(
+      Simulation::Batch.clean(
+        job_options.batch_options
+      )
+      Simulation::Gnuplot.clean(
         job_options.plot_options
       )
     end
