@@ -11,7 +11,7 @@ module Simulation
     end
 
     def generate
-      puts "Generating #{plot_output}"
+      puts "Generating #{script_path}"
       template.build
     end
 
@@ -23,7 +23,7 @@ module Simulation
     def template
       @template ||= Utils::Template.new(
         "mvr/templates/#{options.template}.gnu.erb",
-        "mvr/gnuplot/#{output}.gnu",
+        script_path,
         variables,
         [GnuplotHelper]
       )
@@ -33,6 +33,10 @@ module Simulation
       options.variables.merge(
         output: plot_output
       )
+    end
+    
+    def script_path
+      "mvr/gnuplot/#{output}.gnu"
     end
 
     def plot_output
