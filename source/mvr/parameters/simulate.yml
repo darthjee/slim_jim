@@ -66,6 +66,11 @@ jobs:
       y_column: 12
   - plots:
       - template: 'mutation_infection'
+        output: 'mutation_infection_0.1'
+        infection: 0.1
+        xrange: [0,1]
+        yrange: [0,1]
+      - template: 'mutation_infection'
         output: 'mutation_infection_0.3'
         infection: 0.3
         xrange: [0,1]
