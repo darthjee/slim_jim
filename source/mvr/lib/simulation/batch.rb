@@ -14,6 +14,10 @@ module Simulation
       new(options_hash.symbolize_keys).run
     end
 
+    def self.clean(options_hash = {})
+      new(options_hash.symbolize_keys).clean
+    end
+
     def initialize(options_hash)
       @options = BatchOptions.new(
         options_hash.merge(options_hash[:data])
@@ -23,6 +27,10 @@ module Simulation
     def run
       puts "Simulating #{file_path}"
       simulate_all
+    end
+
+    def clean
+      FileUtils.rm_rf file_path
     end
 
     private

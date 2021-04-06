@@ -5,6 +5,7 @@ require_relative '../lib/mvr'
 import 'mvr/tasks/simulate.rake'
 import 'mvr/tasks/generate_scripts.rake'
 import 'mvr/tasks/plot.rake'
+import 'mvr/tasks/clean.rake'
 
 namespace :mvr do
   desc 'Run all task'
