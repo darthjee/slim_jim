@@ -12,6 +12,9 @@ namespace :mvr do
       Simulation::Batch.clean(
         job_options.batch_options
       )
+      Simulation::Gnuplot.clean(
+        job_options.plot_options
+      )
     end
   end
 end

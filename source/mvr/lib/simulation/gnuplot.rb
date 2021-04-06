@@ -8,6 +8,10 @@ module Simulation
       new(options).generate
     end
 
+    def self.clean(options)
+      new(options).clean
+    end
+
     def initialize(options)
       @options = options
     end
@@ -15,6 +19,11 @@ module Simulation
     def generate
       puts "Generating #{script_path}"
       template.build
+    end
+
+    def clean
+      FileUtils.rm_rf script_path
+      FileUtils.rm_rf plot_output
     end
 
     private
