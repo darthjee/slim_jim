@@ -27,7 +27,7 @@ module Utils
     end
 
     def build_builder
-      Utils::ErbBuilder.new(input_stream, variables).tap do |_builder|
+      Utils::ErbBuilder.new(input_stream, variables).tap do |builder|
         helpers.each do |helper|
           eval("class << builder\ninclude #{helper}\nend")
         end

@@ -8,7 +8,7 @@ namespace :mvr do
     yml = YAML.load_file('./mvr/parameters/simulate.yml')
     options = Simulation::Options.new(yml)
 
-    options.jobs_options.each do |job_options|
+    options.data_jobs_options.each do |job_options|
       Simulation::Batch.run(
         job_options.batch_options
       )

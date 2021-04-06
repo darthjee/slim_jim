@@ -1,0 +1,17 @@
+reset
+set pm3d
+<%= set_xrange %>
+<%= set_yrange %>
+
+set xlabel "Mutation"
+set ylabel "Activation"
+set zlabel "K index"
+set title "Infection Rate <%= @infection * 100 %>%"
+
+f1(m, a, i) = i * log(1-m) - log(1 - m * a)
+z(x, y) = 0
+
+set term png
+set out "<%= @output %>
+
+splot f1(x, y, <%= @infection %>)

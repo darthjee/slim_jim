@@ -9,9 +9,9 @@ namespace :mvr do
     options = Simulation::Options.new(yml)
 
     options.jobs_options.each do |job_options|
-      Simulation::Gnuplot.generate(
-        job_options.plot_options
-      )
+      job_options.plots_options.each do |option|
+        Simulation::Gnuplot.generate(option)
+      end
     end
   end
 end
