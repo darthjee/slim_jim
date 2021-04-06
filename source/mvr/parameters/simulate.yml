@@ -67,5 +67,10 @@ jobs:
   - plots:
       - template: 'mutation_infection'
         output: 'mutation_infection_0.3'
+        infection: 0.3
       - template: 'mutation_infection'
         output: 'mutation_infection_0.5'
+        infection: 0.5
+      - template: 'mutation_infection'
+        output: 'mutation_infection_0.7'
+        infection: 0.7

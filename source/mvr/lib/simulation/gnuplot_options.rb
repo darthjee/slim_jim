@@ -10,7 +10,8 @@ module Simulation
       y_column: 12,
       xlabel: 'Infection',
       ylabel: 'log(ratio)',
-      title: false
+      title: false,
+      infection: 0.3
     )
     skip_validation
 
@@ -23,7 +24,8 @@ module Simulation
         yrange: yrange,
         x_column: x_column,
         y_column: y_column,
-        title: title
+        title: title,
+        infection: infection,
       }
     end
 
