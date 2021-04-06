@@ -4,11 +4,11 @@ jobs:
     data:
       min_population: 1000000
       max_population: 180000000
-      population_points: 5
+      population_points: 100
       activation: 0.01
       mutation: 0.01
       infection: 0.01
-      repetitions: 5
+      repetitions: 30
     plot:
       template: 'mutation'
       output: 'population'
@@ -23,8 +23,8 @@ jobs:
       mutation: 0.01
       min_infection: 0.01
       max_infection: 1
-      infection_points: 5
-      repetitions: 5
+      infection_points: 100
+      repetitions: 30
     plot:
       template: 'mutation'
       output: 'infection'
@@ -38,9 +38,9 @@ jobs:
       activation: 0.01
       min_mutation: 0.0001
       max_mutation: 1
-      mutation_points: 5
+      mutation_points: 100
       infection: 0.5
-      repetitions: 5
+      repetitions: 30
     plot:
       template: 'mutation'
       output: 'mutation'
@@ -53,10 +53,10 @@ jobs:
       population: 1000000
       min_activation: 0.0001
       max_activation: 1
-      activation_points: 5
+      activation_points: 100
       mutation: 0.01
       infection: 0.5
-      repetitions: 5
+      repetitions: 30
     plot:
       template: 'mutation'
       output: 'activation'
