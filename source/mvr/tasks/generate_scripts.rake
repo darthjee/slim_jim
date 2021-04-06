@@ -6,7 +6,7 @@ namespace :mvr do
   desc 'generate gnuplot scripts'
   task :generate_scripts do
     yml = YAML.load_file('./mvr/parameters/simulate.yml')
-    yml.each do |params|
+    yml["jobs"].each do |params|
       Simulation::Gnuplot.generate(params)
     end
   end

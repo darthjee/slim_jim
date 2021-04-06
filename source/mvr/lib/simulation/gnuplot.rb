@@ -13,6 +13,7 @@ module Simulation
     end
 
     def generate
+      puts "Generating #{plot_output}"
       template.build
     end
 

@@ -21,6 +21,7 @@ module Simulation
     end
 
     def run
+      puts "Simulating #{file_path}"
       simulate_all
     end
 
