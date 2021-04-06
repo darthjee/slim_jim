@@ -2,14 +2,12 @@ module Simulation
   class Gnuplot
     private_class_method :new
 
-    def self.generate(options_hash = {})
-      new(options_hash.symbolize_keys).generate
+    def self.generate(options)
+      new(options).generate
     end
 
-    def initialize(options_hash)
-      @options = GnuplotOptions.new(
-        options_hash.merge(options_hash[:plot])
-      )
+    def initialize(options)
+      @options = options
     end
 
     def generate

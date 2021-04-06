@@ -10,18 +10,16 @@ module Simulation
       ratio ratio_deviance log_ratio
     ]
 
-    def self.run(options_hash = {})
-      new(options_hash.symbolize_keys).run
+    def self.run(options)
+      new(options).run
     end
 
-    def self.clean(options_hash = {})
-      new(options_hash.symbolize_keys).clean
+    def self.clean(options)
+      new(options).clean
     end
 
-    def initialize(options_hash)
-      @options = BatchOptions.new(
-        options_hash.merge(options_hash[:data])
-      )
+    def initialize(options)
+      @options = options
     end
 
     def run
