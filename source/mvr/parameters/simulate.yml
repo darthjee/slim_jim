@@ -9,7 +9,7 @@ jobs:
       mutation: 0.01
       infection: 0.01
       repetitions: 5
-    plot:
+    plots:
       template: 'mutation'
       output: 'population'
       xlabel: 'Population Size'
@@ -25,7 +25,7 @@ jobs:
       max_infection: 1
       infection_points: 5
       repetitions: 5
-    plot:
+    plots:
       template: 'mutation'
       output: 'infection'
       xlabel: 'Max infection'
@@ -41,7 +41,7 @@ jobs:
       mutation_points: 5
       infection: 0.5
       repetitions: 5
-    plot:
+    plots:
       template: 'mutation'
       output: 'mutation'
       xlabel: 'Mutation chance'
@@ -57,7 +57,7 @@ jobs:
       mutation: 0.01
       infection: 0.5
       repetitions: 5
-    plot:
+    plots:
       template: 'mutation'
       output: 'activation'
       xlabel: 'Activation chance'

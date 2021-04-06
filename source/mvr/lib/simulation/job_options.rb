@@ -5,7 +5,7 @@ require 'sinclair'
 module Simulation
   class JobOptions < Sinclair::Options
     skip_validation
-    with_options :resimulate, :data_file, :data, :plot
+    with_options :resimulate, :data_file, :data, :plots
 
     def batch_options
       BatchOptions.new(
@@ -16,12 +16,14 @@ module Simulation
       )
     end
 
-    def plot_options
-      GnuplotOptions.new(
-        plot.merge(
-          data_file: data_file
+    def plots_options
+      [plots].flatten.map do |plot|
+        GnuplotOptions.new(
+          plot.merge(
+            data_file: data_file
+          )
         )
-      )
+      end
     end
   end
 end
