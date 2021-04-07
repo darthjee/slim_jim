@@ -8,6 +8,8 @@ set ylabel "Activation"
 set zlabel "K index"
 set title "Infection Rate <%= @infection * 100 %>%"
 
+set palette defined (-1 "red", -0.5 "yellow", 0 "white", 0.5 "green", 1 "blue") 
+
 f1(m, a, i) = i * log(1-m) - log(1 - m * a)
 z(x, y) = 0
 
