@@ -64,6 +64,24 @@ jobs:
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
       x_column: 3
       y_column: 12
+  - data_file: 'activation_and_mutation'
+    data:
+      population: 1000000
+      min_activation: 0.0001
+      max_activation: 1
+      activation_points: 20
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 20
+      infection: 0.5
+      repetitions: 30
+    plots:
+      template: 'mutation'
+      output: 'activation'
+      xlabel: 'Activation chance'
+      ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
+      x_column: 3
+      y_column: 12
   - plots:
       - template: 'mutation_infection_log'
         output: 'mutation_infection_0.1'
