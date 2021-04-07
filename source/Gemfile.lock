@@ -49,6 +49,7 @@ DEPENDENCIES
   activesupport (= 5.2.5)
   bundler (~> 1.16.1)
   danica (= 2.7.5)
+  darthjee-core_ext (= 1.7.4)
   dr_light (= 0.0.3)
   rake (= 13.0.1)
   rubocop (= 0.80.1)
