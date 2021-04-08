@@ -18,3 +18,21 @@ jobs:
       plots:
         - columns: [1, 6]
         - columns: [1, 8]
+  - data_file: 'hoax_mutation'
+    data:
+      population: 1000000
+      activation: 0.5
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 50
+      infection: 0.5
+      repetitions: 30
+    plots:
+      template: 'mutation'
+      output: 'hoax_mutation'
+      xlabel: 'Mutation Chance'
+      ylabel: 'Mutations'
+      columns: [1, 7]
+      plots:
+        - columns: [2, 6]
+        - columns: [2, 8]
