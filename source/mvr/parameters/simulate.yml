@@ -14,8 +14,7 @@ jobs:
       output: 'population'
       xlabel: 'Population Size'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 4
-      y_column: 12
+      coulumns: [4, 12]
   - data_file: 'infection'
     data:
       population: 1000000
@@ -30,8 +29,7 @@ jobs:
       output: 'infection'
       xlabel: 'Max infection'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 1
-      y_column: 12
+      coulumns: [1, 12]
   - data_file: 'mutation'
     data:
       population: 1000000
@@ -46,8 +44,7 @@ jobs:
       output: 'mutation'
       xlabel: 'Mutation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 2
-      y_column: 12
+      coulumns: [2, 12]
   - data_file: 'activation'
     data:
       population: 1000000
@@ -62,8 +59,7 @@ jobs:
       output: 'activation'
       xlabel: 'Activation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 3
-      y_column: 12
+      coulumns: [3, 12]
   - data_file: 'activation_and_mutation_0.3'
     data:
       population: 1000000
@@ -80,8 +76,7 @@ jobs:
       output: 'activation_and_mutation_0.3'
       xlabel: 'Activation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 3
-      y_column: 12
+      coulumns: [3, 12]
       palette_points: [-4, -0.5, 0, 0.2, 0.25]
   - data_file: 'activation_and_mutation_0.5'
     data:
@@ -99,8 +94,7 @@ jobs:
       output: 'activation_and_mutation_0.5'
       xlabel: 'Activation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 3
-      y_column: 12
+      coulumns: [3, 12]
       palette_points: [-4, -0.5, 0, 0.2, 0.25]
   - data_file: 'activation_and_mutation_0.7'
     data:
@@ -118,8 +112,7 @@ jobs:
       output: 'activation_and_mutation_0.7'
       xlabel: 'Activation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 3
-      y_column: 12
+      coulumns: [3, 12]
       palette_points: [-4, -0.5, 0, 0.2, 0.25]
   - plots:
       - template: 'mutation_infection_log'

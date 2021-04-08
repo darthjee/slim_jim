@@ -6,8 +6,7 @@ module Simulation
   class GnuplotOptions < Sinclair::Options
     with_options :output, :template, :data_file, :xrange, :yrange
     with_options(
-      x_column: 1,
-      y_column: 12,
+      columns: [1, 12],
       xlabel: 'Infection',
       ylabel: 'log(ratio)',
       title: false,
@@ -23,8 +22,7 @@ module Simulation
         ylabel: ylabel,
         xrange: xrange,
         yrange: yrange,
-        x_column: x_column,
-        y_column: y_column,
+        columns: columns,
         title: title,
         infection: infection,
         palette_points: palette_points
