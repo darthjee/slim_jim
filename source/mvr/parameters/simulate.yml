@@ -14,10 +14,13 @@ jobs:
       output: 'hoax'
       xlabel: 'Infection rate'
       ylabel: 'Mutations'
+      title: 'Mutation on:'
       columns: [1, 7]
       plots:
         - columns: [1, 6]
+          key: 'Infected'
         - columns: [1, 8]
+          key: 'Vaccinated'
   - data_file: 'hoax_mutation'
     data:
       population: 1000000
@@ -25,14 +28,17 @@ jobs:
       min_mutation: 0.01
       max_mutation: 1
       mutation_points: 50
-      infection: 0.5
+      infection: 0.3
       repetitions: 30
     plots:
       template: 'mutation'
       output: 'hoax_mutation'
       xlabel: 'Mutation Chance'
       ylabel: 'Mutations'
+      title: 'Mutation on:'
       columns: [1, 7]
       plots:
         - columns: [2, 6]
+          key: 'Infected'
         - columns: [2, 8]
+          key: 'Vaccinated'

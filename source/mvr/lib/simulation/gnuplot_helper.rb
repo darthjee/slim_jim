@@ -11,11 +11,19 @@ module Simulation
     end
 
     def plot_files
-      strings = plots.map do |plot|
-        "\"#{@data_file}\" u ($#{plot.columns.join('):($')}) w lines"
-      end
+      strings = plots.map { |plot| file_line(plot) }
 
       "plot #{strings.join(", \\\n")}"
+    end
+
+    def set_key
+      plots.any?(&:key) ? "" : "set nokey" 
+    end
+
+    def file_line(plot)
+        parts = ["\"#{@data_file}\" u ($#{plot.columns.join('):($')}) w lines"]
+        parts << "t \"#{plot.key}\"" if plot.key
+        parts.join(" ")
     end
 
     def set_xrange
