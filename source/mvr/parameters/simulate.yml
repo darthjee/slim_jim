@@ -76,8 +76,8 @@ jobs:
       infection: 0.5
       repetitions: 30
     plots:
-      template: 'mutation'
-      output: 'activation'
+      template: 'mutation3d'
+      output: 'activation_and_mutation'
       xlabel: 'Activation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
       x_column: 3

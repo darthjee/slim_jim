@@ -1,0 +1,14 @@
+reset
+set pm3d
+<%= set_xrange %>
+<%= set_yrange %>
+
+set xlabel "Mutation"
+set ylabel "Activation"
+set zlabel "K index"
+<%= set_title %>
+
+set term png
+set out "<%= @output %>
+
+splot "<%= @data_file %>" u ($3):($1):($12) w lines
