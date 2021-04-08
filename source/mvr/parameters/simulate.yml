@@ -69,10 +69,10 @@ jobs:
       population: 1000000
       min_activation: 0.0001
       max_activation: 1
-      activation_points: 20
+      activation_points: 50
       min_mutation: 0.01
       max_mutation: 1
-      mutation_points: 20
+      mutation_points: 50
       infection: 0.3
       repetitions: 30
     plots:
@@ -88,10 +88,10 @@ jobs:
       population: 1000000
       min_activation: 0.0001
       max_activation: 1
-      activation_points: 20
+      activation_points: 50
       min_mutation: 0.01
       max_mutation: 1
-      mutation_points: 20
+      mutation_points: 50
       infection: 0.5
       repetitions: 30
     plots:
@@ -107,10 +107,10 @@ jobs:
       population: 1000000
       min_activation: 0.0001
       max_activation: 1
-      activation_points: 20
+      activation_points: 50
       min_mutation: 0.01
       max_mutation: 1
-      mutation_points: 20
+      mutation_points: 50
       infection: 0.7
       repetitions: 30
     plots:
