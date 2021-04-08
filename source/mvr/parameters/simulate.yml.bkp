@@ -1,5 +1,68 @@
 resimulate: false
 jobs:
+  - data_file: 'hoax'
+    data:
+      population: 1000000
+      activation: 0.7
+      mutation: 0.01
+      min_infection: 0.01
+      max_infection: 1
+      infection_points: 50
+      repetitions: 30
+    plots:
+      template: 'mutation'
+      output: 'hoax'
+      xlabel: 'Infection rate'
+      ylabel: 'Mutations'
+      title: 'Mutation on:'
+      columns: [1, 7]
+      plots:
+        - columns: [1, 6]
+          key: 'Infected'
+        - columns: [1, 8]
+          key: 'Vaccinated'
+  - data_file: 'hoax_mutation'
+    data:
+      population: 1000000
+      activation: 0.7
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 50
+      infection: 0.3
+      repetitions: 30
+    plots:
+      template: 'mutation'
+      output: 'hoax_mutation'
+      xlabel: 'Mutation Chance'
+      ylabel: 'Mutations'
+      title: 'Mutation on:'
+      columns: [1, 7]
+      plots:
+        - columns: [2, 6]
+          key: 'Infected'
+        - columns: [2, 8]
+          key: 'Vaccinated'
+  - data_file: 'hoax_mutation_explained'
+    data:
+      population: 1000000
+      activation: 0.01
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 50
+      infection: 0.7
+      repetitions: 30
+    plots:
+      template: 'mutation'
+      output: 'hoax_mutation_explained'
+      xlabel: 'Mutation Chance'
+      ylabel: 'Mutations'
+      title: 'Mutation on:'
+      columns: [1, 7]
+      plots:
+        - columns: [2, 6]
+          key: 'Infected'
+        - columns: [2, 8]
+          key: 'Vaccinated'
   - data_file: 'population'
     data:
       min_population: 1000000
