@@ -10,6 +10,14 @@ module Simulation
       "($#{@columns.join('):($')})"
     end
 
+    def plot_files
+      strings = plots.map do |plot|
+        "\"#{@data_file}\" u ($#{plot.columns.join('):($')}) w lines"
+      end
+
+      "plot #{strings.join(", \\\n")}"
+    end
+
     def set_xrange
       @xrange ? "set xr [#{@xrange.join(':')}]" : ''
     end

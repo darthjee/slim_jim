@@ -36,7 +36,9 @@ module Simulation
     end
 
     def plots_options
-      plots
+      plots.map do |hash|
+        PlotOptions.new(to_h.merge(hash))
+      end
     end
   end
 end
