@@ -13,4 +13,4 @@ set zlabel "K index"
 set term png
 set out "<%= @output %>
 
-splot "<%= @data_file %>" u ($3):($2):($12)
+splot "<%= @data_file %>" u <%= columns_string %> w lines
