@@ -3,8 +3,9 @@
 module Simulation
   class Iterator
     class AttributeIterator
-      def initialize(key, options, &block)
+      def initialize(key, file, options, &block)
         @key = key
+        @file = file
         @options = options
         @block = block
       end
@@ -24,6 +25,8 @@ module Simulation
           eps = index * delta / (steps - 1)
           block.call(min + eps)
         end
+
+        file.write("\n")
       end
 
       def value
@@ -50,7 +53,7 @@ module Simulation
         public_send("max_#{key}")
       end
 
-      attr_reader :key, :options, :block
+      attr_reader :key, :file, :options, :block
 
       delegate :min_population, :max_population, :population_points,
                :min_infection, :max_infection, :infection_points,

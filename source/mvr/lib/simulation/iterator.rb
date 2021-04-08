@@ -4,16 +4,17 @@ module Simulation
   class Iterator
     autoload :AttributeIterator, 'simulation/iterator/attribute_iterator'
 
-    def initialize(options)
+    def initialize(options, file)
       @options = options
+      @file = file
     end
 
     def for_all(key, &block)
-      AttributeIterator.new(key, options, &block).iterate
+      AttributeIterator.new(key, file, options, &block).iterate
     end
 
     private
 
-    attr_reader :options
+    attr_reader :file, :options
   end
 end
