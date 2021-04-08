@@ -12,7 +12,7 @@ module Simulation
       ylabel: 'log(ratio)',
       title: false,
       infection: 0.3,
-      palette_points: [0, 0.5, 1, 10, 20]
+      palette_points: [-1, -0.5, 0, 2, 4]
     )
     skip_validation
 
