@@ -114,6 +114,24 @@ jobs:
       ylabel: 'Mutation'
       columns: [3, 2, 12]
       palette_points: [-4, -0.5, 0, 0.2, 0.25]
+  - data_file: 'activation_and_infection_0.01'
+    data:
+      population: 1000000
+      min_activation: 0.0001
+      max_activation: 1
+      activation_points: 50
+      mutation: 0.01
+      min_infection: 0.01
+      max_infection: 1
+      infectioni_points: 50
+      repetitions: 30
+    plots:
+      template: 'mutation3d'
+      output: 'activation_and_infection_0.01'
+      xlabel: 'Activation chance'
+      ylabel: 'Infection'
+      columns: [3, 1, 12]
+      palette_points: [-4, -0.5, 0, 0.2, 0.25]
   - plots:
       - template: 'mutation_infection_log'
         output: 'mutation_infection_0.1'
