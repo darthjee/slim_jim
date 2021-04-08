@@ -4,12 +4,14 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
-gem 'activesupport', '5.2.5', require: false
-gem 'bundler', '~> 1.16.1'
-gem 'danica', '2.7.5'
-gem 'dr_light', '0.0.3'
-gem 'rake',    '13.0.1'
-gem 'rubocop', '0.80.1'
-gem 'safe_attribute_assignment', '0.0.3'
-gem 'sinclair', '1.6.7'
+gem 'activesupport',     '5.2.5', require: false
+gem 'bundler',           '~> 1.16.1'
+gem 'danica',            '2.7.5'
+gem 'dr_light',          '0.0.3'
+gem 'rake',              '13.0.1'
+gem 'rubocop',           '0.80.1'
+gem 'sinclair',          '1.6.7'
 gem 'darthjee-core_ext', '1.7.4'
+gem 'pry',               '0.12.2'
+gem 'pry-nav',           '0.3.0'
+gem 'safe_attribute_assignment', '0.0.3'
