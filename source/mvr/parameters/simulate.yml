@@ -64,24 +64,70 @@ jobs:
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
       x_column: 3
       y_column: 12
+  - data_file: 'activation_and_mutation'
+    data:
+      population: 1000000
+      min_activation: 0.0001
+      max_activation: 1
+      activation_points: 20
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 20
+      infection: 0.5
+      repetitions: 30
+    plots:
+      template: 'mutation'
+      output: 'activation'
+      xlabel: 'Activation chance'
+      ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
+      x_column: 3
+      y_column: 12
   - plots:
-      - template: 'mutation_infection'
+      - template: 'mutation_infection_log'
         output: 'mutation_infection_0.1'
         infection: 0.1
         xrange: [0,1]
         yrange: [0,1]
-      - template: 'mutation_infection'
+        palette_points: [-0.5, -0.25, 0, 0.25, 4.5]
+      - template: 'mutation_infection_log'
+        output: 'mutation_infection_0.1_cut'
+        infection: 0.1
+        xrange: [0,0.1]
+        yrange: [0,0.1]
+        palette_points: [-0.0002, -0.0001, 0, 0.0001, 0.0002]
+      - template: 'mutation_infection_log'
         output: 'mutation_infection_0.3'
         infection: 0.3
         xrange: [0,1]
         yrange: [0,1]
-      - template: 'mutation_infection'
+        palette_points: [-1.5, -1, 0, 1.5, 3]
+      - template: 'mutation_infection_log'
+        output: 'mutation_infection_0.3_cut'
+        infection: 0.3
+        xrange: [0,0.1]
+        yrange: [0,0.1]
+        palette_points: [-0.0002, -0.0001, 0, 0.0001, 0.0002]
+      - template: 'mutation_infection_log'
         output: 'mutation_infection_0.5'
         infection: 0.5
         xrange: [0,1]
         yrange: [0,1]
-      - template: 'mutation_infection'
+        palette_points: [-2.5, -1, 0, 1.5, 2.5]
+      - template: 'mutation_infection_log'
+        output: 'mutation_infection_0.5_cut'
+        infection: 0.5
+        xrange: [0,0.1]
+        yrange: [0,0.1]
+        palette_points: [-0.0002, -0.0001, 0, 0.0001, 0.0002]
+      - template: 'mutation_infection_log'
         output: 'mutation_infection_0.7'
         infection: 0.7
         xrange: [0,1]
         yrange: [0,1]
+        palette_points: [-3.5, -1, 0, 1, 1.5]
+      - template: 'mutation_infection_log'
+        output: 'mutation_infection_0.7_cut'
+        infection: 0.7
+        xrange: [0,0.1]
+        yrange: [0,0.1]
+        palette_points: [-0.0002, -0.0001, 0, 0.0001, 0.0002]

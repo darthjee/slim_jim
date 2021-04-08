@@ -11,7 +11,8 @@ module Simulation
       xlabel: 'Infection',
       ylabel: 'log(ratio)',
       title: false,
-      infection: 0.3
+      infection: 0.3,
+      palette_points: [-1, -0.5, 0, 2, 4]
     )
     skip_validation
 
@@ -26,6 +27,7 @@ module Simulation
         y_column: y_column,
         title: title,
         infection: infection,
+        palette_points: palette_points
       }
     end
 

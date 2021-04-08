@@ -10,7 +10,7 @@ set title "Infection Rate <%= @infection * 100 %>%"
 
 <%= set_palette %>
 
-f1(m, a, i) = ((1-m) ** i)  / (1 - m * a)
+f1(m, a, i) = i * log(1-m) - log(1 - m * a)
 z(x, y) = 0
 
 set term png
