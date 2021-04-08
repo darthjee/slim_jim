@@ -10,9 +10,9 @@ class DatFile
     write_header
   end
 
-  def write(object)
+  def write_object(object)
     values = keys.map { |key| object.public_send(key) }
-    file.write("#{values.join("\t")}\n").tap do
+    write("#{values.join("\t")}\n").tap do
       @mode = 'a'
       close
       @file = nil
@@ -22,9 +22,10 @@ class DatFile
   private
 
   attr_accessor :path, :keys, :mode
+  delegate :write, to: :file
 
   def write_header
-    file.write("##{keys.join("\t")}\n")
+    write("##{keys.join("\t")}\n")
   end
 
   def file

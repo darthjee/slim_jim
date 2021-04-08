@@ -6,8 +6,8 @@ module Simulation
       @title ? "set title '#{@title}'" : 'set notitle'
     end
 
-    def columns
-      "($#{@x_column}):($#{@y_column})"
+    def columns_string
+      "($#{@columns.join('):($')})"
     end
 
     def set_xrange

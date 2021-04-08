@@ -14,8 +14,7 @@ jobs:
       output: 'population'
       xlabel: 'Population Size'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 4
-      y_column: 12
+      columns: [4, 12]
   - data_file: 'infection'
     data:
       population: 1000000
@@ -30,8 +29,7 @@ jobs:
       output: 'infection'
       xlabel: 'Max infection'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 1
-      y_column: 12
+      columns: [1, 12]
   - data_file: 'mutation'
     data:
       population: 1000000
@@ -46,8 +44,7 @@ jobs:
       output: 'mutation'
       xlabel: 'Mutation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 2
-      y_column: 12
+      columns: [2, 12]
   - data_file: 'activation'
     data:
       population: 1000000
@@ -62,26 +59,79 @@ jobs:
       output: 'activation'
       xlabel: 'Activation chance'
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 3
-      y_column: 12
-  - data_file: 'activation_and_mutation'
+      columns: [3, 12]
+  - data_file: 'activation_and_mutation_0.3'
     data:
       population: 1000000
       min_activation: 0.0001
       max_activation: 1
-      activation_points: 20
+      activation_points: 50
       min_mutation: 0.01
       max_mutation: 1
-      mutation_points: 20
+      mutation_points: 50
+      infection: 0.3
+      repetitions: 30
+    plots:
+      template: 'mutation3d'
+      output: 'activation_and_mutation_0.3'
+      xlabel: 'Activation chance'
+      ylabel: 'Mutation'
+      columns: [3, 2, 12]
+      palette_points: [-4, -0.5, 0, 0.2, 0.25]
+  - data_file: 'activation_and_mutation_0.5'
+    data:
+      population: 1000000
+      min_activation: 0.0001
+      max_activation: 1
+      activation_points: 50
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 50
       infection: 0.5
       repetitions: 30
     plots:
-      template: 'mutation'
-      output: 'activation'
+      template: 'mutation3d'
+      output: 'activation_and_mutation_0.5'
       xlabel: 'Activation chance'
-      ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
-      x_column: 3
-      y_column: 12
+      ylabel: 'Mutation'
+      columns: [3, 2, 12]
+      palette_points: [-4, -0.5, 0, 0.2, 0.25]
+  - data_file: 'activation_and_mutation_0.7'
+    data:
+      population: 1000000
+      min_activation: 0.0001
+      max_activation: 1
+      activation_points: 50
+      min_mutation: 0.01
+      max_mutation: 1
+      mutation_points: 50
+      infection: 0.7
+      repetitions: 30
+    plots:
+      template: 'mutation3d'
+      output: 'activation_and_mutation_0.7'
+      xlabel: 'Activation chance'
+      ylabel: 'Mutation'
+      columns: [3, 2, 12]
+      palette_points: [-4, -0.5, 0, 0.2, 0.25]
+  - data_file: 'activation_and_infection_0.01'
+    data:
+      population: 1000000
+      min_activation: 0.0001
+      max_activation: 1
+      activation_points: 50
+      mutation: 0.01
+      min_infection: 0.01
+      max_infection: 1
+      infectioni_points: 50
+      repetitions: 30
+    plots:
+      template: 'mutation3d'
+      output: 'activation_and_infection_0.01'
+      xlabel: 'Activation chance'
+      ylabel: 'Infection'
+      columns: [3, 1, 12]
+      palette_points: [-4, -0.5, 0, 0.2, 0.25]
   - plots:
       - template: 'mutation_infection_log'
         output: 'mutation_infection_0.1'
