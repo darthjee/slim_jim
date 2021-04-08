@@ -82,6 +82,7 @@ jobs:
       ylabel: 'Log(VaccinatedMutation/InfectedMutation)'
       x_column: 3
       y_column: 12
+      palette_points: [-4, -0.25, 0, 0.25, 0.5]
   - plots:
       - template: 'mutation_infection_log'
         output: 'mutation_infection_0.1'

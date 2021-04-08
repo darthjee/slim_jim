@@ -50,11 +50,15 @@ module Simulation
         for_all(:infection) do |infection|
           for_all(:mutation) do |mutation|
             for_all(:activation) do |activation|
-              file.write simulate(population, infection, mutation, activation)
+              file.write_object simulate(population, infection, mutation, activation)
             end
+            file.write("\n")
           end
+          file.write("\n")
         end
+        file.write("\n")
       end
+      file.write("\n")
     end
 
     def iterator
