@@ -52,17 +52,13 @@ module Simulation
             for_all(:activation) do |activation|
               file.write_object simulate(population, infection, mutation, activation)
             end
-            file.write("\n")
           end
-          file.write("\n")
         end
-        file.write("\n")
       end
-      file.write("\n")
     end
 
     def iterator
-      @iterator ||= Iterator.new(options)
+      @iterator ||= Iterator.new(options, file)
     end
 
     def simulate(population, infection, mutation, activation)

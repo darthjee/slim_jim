@@ -14,5 +14,6 @@ module Simulation
   autoload :Gnuplot,        'simulation/gnuplot'
   autoload :GnuplotHelper,  'simulation/gnuplot_helper'
   autoload :GnuplotOptions, 'simulation/gnuplot_options'
+  autoload :PlotOptions,    'simulation/plot_options'
   autoload :Options,        'simulation/options'
 end

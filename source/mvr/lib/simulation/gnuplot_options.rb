@@ -11,7 +11,8 @@ module Simulation
       ylabel: 'log(ratio)',
       title: false,
       infection: 0.3,
-      palette_points: [-1, -0.5, 0, 2, 4]
+      palette_points: [-1, -0.5, 0, 2, 4],
+      plots: [{}]
     )
     skip_validation
 
@@ -25,12 +26,19 @@ module Simulation
         columns: columns,
         title: title,
         infection: infection,
-        palette_points: palette_points
+        palette_points: palette_points,
+        plots: plots_options
       }
     end
 
     def data_file_path
       "mvr/data/#{data_file}.dat"
+    end
+
+    def plots_options
+      plots.map do |hash|
+        PlotOptions.new(to_h.merge(hash))
+      end
     end
   end
 end

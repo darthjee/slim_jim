@@ -3,9 +3,9 @@ reset
 <%= set_yrange %>
 set ylabel "<%= @ylabel %>"
 set xlabel "<%= @xlabel %>"
-set nokey
+<%= set_key %>
 <%= set_title %>
 set term png
 set out "<%= @output %>"
 
-plot "<%= @data_file %>" u <%= columns_string %> w lines
+<%= plot_files %>
