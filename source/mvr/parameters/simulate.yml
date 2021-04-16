@@ -65,12 +65,12 @@ jobs:
           key: 'Vaccinated'
   - data_file: 'population'
     data:
-      min_population: 1000000
-      max_population: 180000000
+      min_population: 100000
+      max_population: 20000000
       population_points: 50
-      activation: 0.01
-      mutation: 0.01
-      infection: 0.01
+      activation: 0.001
+      mutation: 0.001
+      infection: 0.5
       repetitions: 30
     plots:
       template: 'mutation'
